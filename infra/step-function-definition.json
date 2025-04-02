@@ -1,0 +1,16 @@
+{
+  "Comment": "Wait 15 minutes then rollback EC2 instance",
+  "StartAt": "Wait15Minutes",
+  "States": {
+    "Wait15Minutes": {
+      "Type": "Wait",
+      "Seconds": 900,
+      "Next": "RollbackLambda"
+    },
+    "RollbackLambda": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:074521626635:function:rollbackIsolation",
+      "End": true
+    }
+  }
+}

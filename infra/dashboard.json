@@ -1,0 +1,23 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/Lambda", "Invocations", "FunctionName", "isolateEc2Instance" ],
+          [ ".", "Invocations", "FunctionName", "rollbackIsolation" ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "Isolations vs Rollbacks",
+        "stat": "Sum",
+        "period": 300
+      }
+    }
+  ]
+}
